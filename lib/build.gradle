@@ -1,6 +1,7 @@
 plugins {
     id 'java-library'
     id 'kotlin'
+    id 'org.jlleitschuh.gradle.ktlint'
 }
 
 java {
@@ -10,4 +11,12 @@ java {
 
 dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+}
+
+// ktlint
+ktlint {
+    android = false
+    outputColorName ="RED"
+    verbose = true
+    disabledRules.addAll("import-ordering")
 }
