@@ -1,7 +1,7 @@
-# Ktlint-Android-Sample
+# 🔍 Ktlint-Android-Sample
 This proejct introduce how to apply ktlint on an android project.
 
-## What is a `Ktlint`?
+## ⭐️ What is a `Ktlint`?
 
 `ktlint` is a lint for Kotlin. It is a static code analytics tool that checks
 if your codes fits on Kotlin coding convention or style guide line.🔎
@@ -10,12 +10,77 @@ By applying Ktlint, consistency of kotlin codes in your project would be maintai
 As a result, unnecessary communication costs because of low readability and
 differences in coding styles among team members can be reduced.
 
-**💁‍♂️Read more about ktlint on here**
+**💁‍♂️ Read more about ktlint here**
 
 - [Ktlint Page](https://ktlint.github.io/)
 - [Ktlint Plugin GitHub Repository](https://github.com/jlleitschuh/ktlint-gradle)
 
-## How to use Ktlint
+## 🚀 How to apply ktlint
+
+### 1. build.gradle(root)
+
+- Add plugin `org.jlleitschuh.gradle.ktlint`
+- Add repository maven `https://plugins.gradle.org/m2/`
+- Add classpath dependency `org.jlleitschuh.gradle:ktlint-gradle:9.3.0`
+
+```groovy
+apply plugin: 'org.jlleitschuh.gradle.ktlint'
+...
+    repositories {
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
+    }
+...
+    dependencies {
+        classpath "org.jlleitschuh.gradle:ktlint-gradle:9.3.0"
+    }
+}
+
+```
+
+💁‍♂️ Check an example file on [here](build.gradle).
+### 2. build.gradle(android module)
+
+- Add plugin `org.jlleitschuh.gradle.ktlint`.
+- Add ktlint plugin setting.
+
+```groovy
+plugins {
+    id 'org.jlleitschuh.gradle.ktlint'
+}
+...
+ktlint {
+    android = true
+    outputColorName ="RED"
+    verbose = true
+    disabledRules.addAll("import-ordering")
+}
+```
+
+💁‍♂️ Check an example file on [here](app/build.gradle).
+
+### 3. build.gradle(non-android module)
+
+- Add plugin `org.jlleitschuh.gradle.ktlint`.
+- Add ktlint plugin setting.
+
+```groovy
+plugins {
+    id 'org.jlleitschuh.gradle.ktlint'
+}
+...
+ktlint {
+    android = false
+    outputColorName ="RED"
+    verbose = true
+    disabledRules.addAll("import-ordering")
+}
+```
+
+💁‍♂️ Check an example file on [here](lib/build.gradle).
+
+## 🌈 How to use ktlint
 
 ### 1. Ktlint check
 
@@ -58,7 +123,7 @@ Otherwise, on type following command on console.
 ./gradlew ktlintApplyToIdea
 ```
 
-# Reference
+# 👀 Reference
 
 Sample codes and instructions of this project refers to following list
 
