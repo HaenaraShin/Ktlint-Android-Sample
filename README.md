@@ -37,7 +37,7 @@ Execute a following gradle task on Android Studio's gradle tab.
 
 Otherwise, on type following command on console.
 
-``shell
+```shell
 ./gradlew addKtlintCheckGitPreCommitHook
 ```
 - If follwoing error is occurred, create a directory `./.git/hooks` on your project directory.
