@@ -1,5 +1,8 @@
 # 🔍 Ktlint-Android-Sample
+
 This proejct introduce how to apply ktlint on an android project.
+
+📌 자세한 설명은 [블로그](https://haenarashin.github.io/kotlin,/android,/ktlint/2020/12/27/Ktlint-on-your-project.html)에서 확인하실 수 있습니다.
 
 ## ⭐️ What is a `Ktlint`?
 
